@@ -12,8 +12,10 @@ class AmazonConnector
 
 	# args : category
 	def ask(keywords, category)
-		ap "Amazon Seach : #{keywords}"
-		ap "Category : #{category}"
+		if Rails.env.development?
+			ap "Amazon Seach : #{keywords}"
+			ap "Category : #{category}"
+		end
 
 		request = Vacuum.new
 		request.configure(

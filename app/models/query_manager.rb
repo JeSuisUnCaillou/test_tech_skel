@@ -22,6 +22,6 @@ class QueryManager
 		max_price = wit.best_answer_prices
 
 		amazon.ask(sentence, category)
-		return amazon.answers
+		return amazon.answers.blank? ? [] : amazon.answers
 	end
 end

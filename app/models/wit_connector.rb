@@ -9,9 +9,12 @@ class WitConnector
 		@wit_response = JSON.parse(Wit.text_query(question, ENV["WIT_ACCESS_TOKEN"]))
 		Wit.close
 		@answers = @wit_response["outcomes"]
-		
-		ap "Wit Search : #{question}"
-		ap "Intent: #{best_answer_intent}"
+	
+		if Rails.env.development?	
+			ap "Wit Search : #{question}"
+			ap "Intent: #{best_answer_intent}"
+		end
+
 		return @answers
 	end
 
