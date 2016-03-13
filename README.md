@@ -13,4 +13,4 @@ L'objectif pour moi était de réaliser un outil de recherche en langage naturel
 
 J'ai pas non plus trouvé comment extraire l'objet principal de la recherche avec Wit, du coup j'envoie simplement à amazon la question originale dans 'keywords' accompagné de la catégorie trouvée par Wit (Books ou Cars) pour faire la recherche. Ce n'est pas très efficace.
 
-Pour ce qui est du back-end, j'aurais voulu ajouter 2 objets : QueryClassifier & QueryIdentifier. L'un classe les requêtes, l'autre identifie et traite les requêtes "reconnues". J'aurais aussi fait persister les 2 objets en BDD, afin de lier aux recherches leurs classifications et résultats, et pouvoir revoir le résultat sans rejouer les 2 algos.
+Pour ce qui est du back-end, j'aurais voulu ajouter 2 objets : QueryClassifier & QueryIdentifier. L'un classe les requêtes, l'autre identifie et traite les requêtes "reconnues". J'aurais aussi fait persister les 2 objets en BDD, afin de lier aux recherches leurs classifications et résultats, et pouvoir les stocker et faire des stats dessus o_o.
