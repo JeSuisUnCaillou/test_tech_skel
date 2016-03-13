@@ -6,7 +6,9 @@ class WitConnector
 
 	def ask(question)
 		Wit.init
-		@wit_response = JSON.parse(Wit.text_query(question, ENV["WIT_ACCESS_TOKEN"]))
+		#token =ENV["WIT_ACCESS_TOKEN"]
+		token = "KQ2FZHZFPFZKUJ2TIUOHMUG6WJKMMBKF"
+		@wit_response = JSON.parse(Wit.text_query(question, token))
 		Wit.close
 		@answers = @wit_response["outcomes"]
 	
