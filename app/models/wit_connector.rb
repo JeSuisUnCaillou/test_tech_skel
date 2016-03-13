@@ -6,13 +6,21 @@ class WitConnector
 
 	def ask(question)
 		Wit.init
-		@wit_response = Wit.text_query(question, ENV["WIT_ACCESS_TOKEN"])
+		@wit_response = JSON.parse(Wit.text_query(question, ENV["WIT_ACCESS_TOKEN"]))
 		Wit.close
-		@answers = JSON.parse(@wit_response)["outcomes"]
+		@answers = @wit_response["outcomes"]
 		return @answers
 	end
 
 	def best_answer
 		@answers.first
+	end
+
+	def best_answer_intent
+		best_answer.present? ? best_answer["intent"] : nil
+	end
+
+	def best_answer_prices
+		best_answer.present? && best_answer.has_key?("entities") ? best_answer["entities"]["amount_of_money"] : nil
 	end
 end

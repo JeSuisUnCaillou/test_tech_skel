@@ -2,11 +2,6 @@ class AmazonConnector
 	attr_accessor :amazon_response
 	attr_accessor :answers
 
-	CATEGORIES = {
-		'buy_books' => 'Books',
-		'buy_car' => 'Automitive'
-	}
-
 	def test_ask(item)
 		begin
 			ask(item)

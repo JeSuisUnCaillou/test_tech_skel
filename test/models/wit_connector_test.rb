@@ -16,7 +16,7 @@ class WitConnectorTest < ActiveSupport::TestCase
 	test "basic question" do
 		@wit.ask("I want to buy a car for 100€")
 		assert_not_empty(@wit.answers)
-		assert_not_empty(@wit.best_answer["entities"]["amount_of_money"])
-		assert_equal("buy_car", @wit.best_answer["intent"])
+		assert_equal([{"type"=>"value", "unit"=>"EUR", "value"=>100}], @wit.best_answer_prices)
+		assert_equal("buy_car", @wit.best_answer_intent)
 	end
 end
