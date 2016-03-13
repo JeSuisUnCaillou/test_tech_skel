@@ -9,6 +9,6 @@ Add in your `.bashrc` your Wit & Amazon access keys :
   export WIT_ACCESS_TOKEN={TOKEN}
 ```
 
-L'objectif pour moi était de réaliser une recherche sur 2 catégories au choix (Books & Cars), accompagnée d'un prix, mais j'ai pas trouvé comment demander un filtre sur le prix à amazon.
+L'objectif pour moi était de réaliser un outil de recherche en langage naturel sur 2 catégories prédéfinies (Books & Cars), accompagnée d'un prix. Je n'ai pas trouvé comment demander un filtre sur le prix à amazon, donc seule l'identification de la catégorie est en place.
 
-J'ai aussi pô trouvé comment extraire l'objet principal de la recherche avec Wit, du coup j'envoie simplement à amazon la query entière dans 'keywords' accompagné de la catégorie trouvée (Books ou Cars) pour faire la recherche. Ce n'est pas très efficace.
+J'ai pas non plus trouvé comment extraire l'objet principal de la recherche avec Wit, du coup j'envoie simplement à amazon la question originale dans 'keywords' accompagné de la catégorie trouvée par Wit (Books ou Cars) pour faire la recherche. Ce n'est pas très efficace.
