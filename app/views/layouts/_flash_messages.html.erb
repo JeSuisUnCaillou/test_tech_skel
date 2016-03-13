@@ -1,0 +1,14 @@
+<% dismiss_cross =  content_tag(:button, 'x', class: "close", data: { dismiss: 'alert' }) %>
+
+<% if notice.present? %>
+	<p class="alert alert-success">
+		<%= notice %>
+		<%= dismiss_cross %>
+	</p>
+<% end %>
+<% if alert.present? %>
+	<p class="alert alert-danger">
+		<%= alert %>
+		<%= dismiss_cross %>
+	</p>
+<% end %>
