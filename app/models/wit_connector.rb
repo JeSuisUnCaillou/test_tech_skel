@@ -5,6 +5,8 @@ class WitConnector
 	attr_accessor :answers
 
 	def ask(question)
+		return [] if question.blank?
+
 		Wit.init
 		#token =ENV["WIT_ACCESS_TOKEN"]
 		token = "KQ2FZHZFPFZKUJ2TIUOHMUG6WJKMMBKF"
@@ -21,7 +23,7 @@ class WitConnector
 	end
 
 	def best_answer
-		@answers.first
+		@answers.try(:first)
 	end
 
 	def best_answer_intent
