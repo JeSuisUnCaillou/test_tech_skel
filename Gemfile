@@ -48,3 +48,4 @@ end
 gem 'wit'
 gem 'vacuum'
 gem 'awesome_print'
+gem 'devise'
