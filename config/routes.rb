@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
-  resources :searches
-  devise_for :users
 	root 'home#index'
+
+  devise_for :users
+
+  resources :searches, only: [:index, :show, :create, :destroy]
 
 
   # The priority is based upon order of creation: first created -> highest priority.

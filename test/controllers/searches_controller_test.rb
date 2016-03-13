@@ -14,11 +14,6 @@ class SearchesControllerTest < ActionController::TestCase
     assert_not_nil assigns(:searches)
   end
 
-  test "should get new" do
-    get :new
-    assert_response :success
-  end
-
   test "should create search" do
     assert_difference('Search.count') do
       post :create, search: { sentence: @search.sentence, user_id: @search.user_id }
@@ -30,16 +25,6 @@ class SearchesControllerTest < ActionController::TestCase
   test "should show search" do
     get :show, id: @search
     assert_response :success
-  end
-
-  test "should get edit" do
-    get :edit, id: @search
-    assert_response :success
-  end
-
-  test "should update search" do
-    patch :update, id: @search, search: { sentence: @search.sentence, user_id: @search.user_id }
-    assert_redirected_to search_path(assigns(:search))
   end
 
   test "should destroy search" do

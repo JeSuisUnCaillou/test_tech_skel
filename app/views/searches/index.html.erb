@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 
 <h1>Listing Searches</h1>
 
@@ -17,7 +16,6 @@
         <td><%= search.sentence %></td>
         <td><%= search.user %></td>
         <td><%= link_to 'Show', search %></td>
-        <td><%= link_to 'Edit', edit_search_path(search) %></td>
         <td><%= link_to 'Destroy', search, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -26,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Search', new_search_path %>
+<%#= link_to 'New Search' new_search_path %>
