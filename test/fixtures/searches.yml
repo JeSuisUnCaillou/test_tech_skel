@@ -2,8 +2,8 @@
 
 one:
   sentence: MyText
-  user_id: 
+  user: users(:one)
 
 two:
   sentence: MyText
-  user_id: 
+  user: users(:one)
