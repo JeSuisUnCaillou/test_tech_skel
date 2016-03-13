@@ -2,8 +2,12 @@
 
 one:
   sentence: MyText
-  user: users(:one)
+  user: one
 
 two:
-  sentence: MyText
-  user: users(:one)
+  sentence: MySecondText
+  user: one
+
+three:
+  sentence: MyThirdText
+  user: two

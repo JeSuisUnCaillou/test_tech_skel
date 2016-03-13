@@ -5,7 +5,6 @@
   <thead>
     <tr>
       <th>Sentence</th>
-      <th>User</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,7 +13,6 @@
     <% @searches.each do |search| %>
       <tr>
         <td><%= search.sentence %></td>
-        <td><%= search.user %></td>
         <td><%= link_to 'Show', search %></td>
         <td><%= link_to 'Destroy', search, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

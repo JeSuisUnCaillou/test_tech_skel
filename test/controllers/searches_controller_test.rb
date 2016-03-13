@@ -4,7 +4,8 @@ class SearchesControllerTest < ActionController::TestCase
   include Devise::TestHelpers
 
   setup do
-		sign_in users(:one)
+		@user = users(:one)
+		sign_in @user
     @search = searches(:one)
   end
 
@@ -16,16 +17,21 @@ class SearchesControllerTest < ActionController::TestCase
 
   test "should create search" do
     assert_difference('Search.count') do
-      post :create, search: { sentence: @search.sentence, user_id: @search.user_id }
+      post :create, search: { sentence: "rablabla" }
     end
-
     assert_redirected_to search_path(assigns(:search))
+		assert_equal "rablabla", @user.searches.last.sentence
   end
 
   test "should show search" do
     get :show, id: @search
     assert_response :success
   end
+
+	test "shouldn't show search of someone else" do
+		get :show, id: users(:two).searches.first.id
+		assert_response :unauthorized
+	end
 
   test "should destroy search" do
     assert_difference('Search.count', -1) do
@@ -34,4 +40,9 @@ class SearchesControllerTest < ActionController::TestCase
 
     assert_redirected_to searches_path
   end
+
+	test "shouldn't destroy search of someone else" do
+		delete :destroy, id: users(:two).searches.first.id
+		assert_response :unauthorized
+	end
 end
