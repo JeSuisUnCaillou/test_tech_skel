@@ -11,6 +11,12 @@ class SearchesController < ApplicationController
   # GET /searches/1
   # GET /searches/1.json
   def show
+		q_manager = QueryManager.new
+		@results = q_manager.natural_amazon_search(@search.sentence).map do |result|
+			url = result["DetailPageURL"]
+			title = result["ItemAttributes"]["Title"]
+			{url: url, title: title}
+		end
   end
 
   # POST /searches

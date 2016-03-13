@@ -6,7 +6,7 @@ class QueryManagerTest < ActiveSupport::TestCase
 	end
 
 	test "natural_amazon_search" do
-		results = @q_manager.natural_amazon_search("buy me a mazda car")
+		results = @q_manager.natural_amazon_search("The last J.K. Rowling book please")
 		assert_not_empty results
 	end
 end

@@ -12,6 +12,9 @@ class AmazonConnector
 
 	# args : category
 	def ask(keywords, category)
+		ap "Amazon Seach : #{keywords}"
+		ap "Category : #{category}"
+
 		request = Vacuum.new
 		request.configure(
     	aws_access_key_id: ENV["AWS_ACCESS_KEY_ID"],
